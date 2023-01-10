@@ -1,0 +1,73 @@
+.mensaje {
+  @include tamaño(90%, 50px);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  &__text {
+    color: #fff;
+  }
+  &--green {
+    background-color: #70f564;
+    box-shadow: 0 0 5px #70f564;
+  }
+  &--red {
+    background-color: #f56464;
+    box-shadow: 0 0 5px #f56464;
+  }
+}
+.formulario {
+  position: relative;
+  @include tamaño(100%, 300px);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 1400px) {
+    @include tamaño(90%, 300px);
+  }
+
+  &__titel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &__form {
+    @include tamaño(90%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #000;
+    border-radius: 5px;
+  }
+  &__contenInput {
+    @include tamaño(90%, 50px);
+    display: flex;
+    align-items: center;
+  }
+  &__inputs {
+    @include tamaño(100%, 80%);
+    padding: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #333;
+  }
+  &__button {
+    @include tamaño(90%, 40px);
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #444;
+    color: #f4f4f4;
+    margin: 10px auto;
+  }
+}
