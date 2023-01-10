@@ -1,0 +1,49 @@
+body {
+	display: grid;
+	place-items: center;
+}
+
+.cronometro {
+	width: 20em;
+	font-size: 1rem;
+	padding: 1em;
+	background-color: #333;
+	border-radius: 0.625em;
+	border: 0 0 0.3125em #555;
+	display: flex;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.cronometro__content {
+	margin: 0;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+.btn {
+	width: 12.5em;
+	height: 2.5em;
+	font-size: 1rem;
+	display: flex;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+}
+.btn__play {
+	height: 1.25em;
+	border-width: 0.625em 0 0.625em 1.25em;
+	border-color: transparent transparent transparent #fff;
+	transition: border-width 0.3s ease;
+	border-style: solid;
+}
+.btn__play--runnig {
+	border-style: double;
+	border-width: 0 0 0 1.25em;
+}
+.btn__stop {
+	width: 1.25em;
+	height: 1.25em;
+	background-color: #fff;
+	border: 0;
+}
