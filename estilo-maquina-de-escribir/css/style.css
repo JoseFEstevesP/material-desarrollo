@@ -1,0 +1,42 @@
+:root {
+	--step: 5;
+}
+body {
+	display: grid;
+	place-items: center;
+}
+.seciones {
+	width: 300px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #333;
+}
+.seciones__title {
+	width: 12.2ch;
+	position: relative;
+}
+
+.seciones__title::after {
+	content: '';
+	position: absolute;
+	border-left: 4px solid #000;
+	background-color: #333;
+	right: 0;
+	height: 100%;
+	animation: efecto 3s infinite alternate steps(12);
+}
+.seciones__title--js {
+	font-family: monospace;
+	/* overflow: hidden; */
+}
+.seciones__title--js::after {
+	animation: efecto 3s infinite alternate steps(var(--step));
+}
+@keyframes efecto {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0;
+	}
+}
