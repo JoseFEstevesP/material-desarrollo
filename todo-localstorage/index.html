@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tareas</title>
+		<link
+			rel="shortcut icon"
+			href="asset/src/icon.jpg"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="css/resetCss.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script defer src="js/main.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="title">Lista de Tareas</h1>
+			<div class="msg" id="msg">
+				<p class="msg__text">
+					No se puede crear una tarea con el campo de texto vacío
+				</p>
+			</div>
+			<form action="#" class="formTarea" id="formTarea">
+				<input
+					class="formTarea__input"
+					placeholder="Ingrece su tarea"
+					type="text"
+					name="tarea"
+				/>
+				<button class="formTarea__btn" type="submit">Añadir</button>
+			</form>
+		</header>
+		<main class="main" id="CnTodo"></main>
+		<template id="TmTodo">
+			<article class="tarea">
+				<p class="tarea__text"></p>
+				<button class="tarea__btn">Eliminar</button>
+			</article>
+		</template>
+	</body>
+</html>
