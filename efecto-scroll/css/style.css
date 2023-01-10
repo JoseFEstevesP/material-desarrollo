@@ -1,0 +1,46 @@
+html {
+  scroll-behavior: smooth;
+}
+:target::before {
+  content: "";
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+}
+body {
+  margin: 6rem 0;
+}
+.menu__ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 75px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #ddd;
+}
+.menu__li {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.menu__li--activo {
+  background-color: #007bff;
+}
+.menu__li--activo > .menu__a {
+  color: #fff;
+}
+.menu__a {
+  text-decoration: none;
+  color: #007bff;
+}
+.articulo {
+  padding: 0 1.5rem;
+}
+.articulo__titulo {
+  font-size: 2rem;
+}
