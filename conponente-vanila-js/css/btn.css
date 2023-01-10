@@ -1,0 +1,36 @@
+button{
+	font-family: inherit;
+	font-size: inherit;
+	hyphens: auto;
+	background-color: transparent;
+	display: block;
+	color: inherit;
+	line-height: 1.15;
+	margin: 0;
+	text-transform: none;
+}
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.6rem 0.5rem;
+  border: 0.125rem solid rgb(158, 158, 158);
+  border-radius: 0.3125rem;
+  font-weight: bold;
+}
+.btn svg {
+  width: 1.875rem;
+	height: 1.875rem;
+	object-fit: contain;
+	fill: currentColor;
+  transition: fill .5s;
+}
+.btn:hover svg {
+  fill: rgb(255, 26, 26);
+}
+.btn img{
+	width: 1.875rem;
+	height: 1.875rem;
+	object-fit: contain;
+}
