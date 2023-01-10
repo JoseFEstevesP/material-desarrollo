@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Guia de eslint y prettier</title>
+		<style>
+			:root{--color-primary: #181818;--color-secondary: #f0f0f0;--font-principal: system-ui, sans-serif;}@media (prefers-color-scheme: dark){:root{--color-primary: #f0f0f0;--color-secondary: #181818;}}@media (prefers-contrast: high){:root{--color-primary: #000;--color-secondary: #fff;}}@media (prefers-reduced-motion: reduce){*{-webkit-animation: none;animation: none;-webkit-transition: none;-o-transition: none;transition: none;}}::-moz-selection{background-color: var(--color-primary);color: var(--color-secondary);}::selection{background-color: var(--color-primary);color: var(--color-secondary);}*,*::after,*::before{-webkit-box-sizing: border-box;box-sizing: border-box;}*{vertical-align: baseline;}html{scroll-behavior: smooth;line-height: 1.15;-webkit-text-size-adjust: 100%;}body{width: 100%;min-height: 100vh;margin: 0;font-size: 100%;font-family: var(--font-principal);color: var(--color-primary);background-color: var(--color-secondary);font-smooth: always;-webkit-font-smoothing: antialiased;-mox-osx-font-smoothing: grayscale;}img{border-style: none;}img,picture,video,frame,figure{max-width: 100%;width: 100%;display: block;}a{display: block;background-color: transparent;}p a{display: inline;}li{list-style-type: none;}h1,h2,h3,h4,h5,h6,p,span,a,blockquote,i,u,em{font-style: inherit;text-decoration: none;color: inherit;}blockquote::before,blockquote::after,q::before,q::after{content: '';content: none;}form,input,textarea,select,button,label,optgroup{font-family: inherit;font-size: inherit;-webkit-hyphens: auto;-ms-hyphens: auto;hyphens: auto;background-color: transparent;display: block;color: inherit;line-height: 1.15;margin: 0;}label input{display: inline;}button{cursor: pointer;}button,input{overflow: visible;}button,select{text-transform: none;}button::-moz-focus-inner,[type='button']::-moz-focus-inner,[type='reset']::-moz-focus-inner,[type='submit']::-moz-focus-inner{border-style: none;padding: 0;}button,[type='button'],[type='reset'],[type='submit']{-webkit-appearance: button;}table,tr,td{border-collapse: collapse;border-spacing: 0;}svg{width: 100%;display: block;fill: currentColor;}main{display: block;}h1{font-size: 2em;margin: 0.67em 0;}hr{width: 100%;-webkit-box-sizing: content-box;box-sizing: content-box;height: 0;overflow: visible;}pre{font-family: monospace, monospace;font-size: 1em;}abbr[title]{border-bottom: none;text-decoration: underline;-webkit-text-decoration: underline dotted;text-decoration: underline dotted;}b,strong{font-weight: bolder;}code,kbd,samp{font-family: monospace, monospace;font-size: 1em;}small{font-size: 80%;}sub,sup{font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;}sub{bottom: -0.25em;}sup{top: -0.5em;}progress{vertical-align: baseline;}textarea{overflow: auto;}[type='checkbox'],[type='radio']{-webkit-box-sizing: border-box;box-sizing: border-box;padding: 0;}[type='number']::-webkit-inner-spin-button,[type='number']::-webkit-outer-spin-button{height: auto;}[type='search']{-webkit-appearance: textfield;outline-offset: -2px;}[type='search']::-webkit-search-decoration{-webkit-appearance: none;}::-webkit-file-upload-button{-webkit-appearance: button;font: inherit;}details{display: block;}summary{display: list-item;cursor: pointer;}template{display: none;}[hidden]{display: none;}:root{--content-color: #f5f5f5;}@media (prefers-color-scheme: dark){:root{--content-color: #333;}}body{padding: 1em;display: flex;justify-content: center;align-items: center;gap: 1em;flex-direction: column;}.title{text-align: center;}.contend{--border: transparent;padding: 1em 1.5em;border-radius: 0.625em;display: block;background-color: var(--content-color);margin-left: 1em;border: 2px solid var(--border);}p{margin: 0;}.h3{margin: 0;}.option{display: block;}.red{color: #e60000;}.blue{color: #0084ff;}.yellow{color: #ffff4d;}.purpel{color: #b644b7;}.cian{color: #04e8c6;}.green{color: #4dc272;}.gray{color: gray;}
+		</style>
+	</head>
+	<body>
+		<h1 class="title">Guia de instalacion de eslint y prettier</h1>
+		<h2>Eslint</h2>
+		<p>Primero comenzamos instalando el paquete de eslint.</p>
+		<div class="contend">npm i -E -D eslint</div>
+		<p>Procedemos a ejecutar la herramienta con su codigo</p>
+		<div class="contend">npx eslint --init</div>
+		<p>Empezara a hacer varias preguntas las cuales son:</p>
+		<span>
+			"Selecconamos las opciones recomendadas que esta marcadas de color azul"
+		</span>
+		<h3 class="h3">How would you like to use ESLint?</h3>
+		<div class="contend">
+			<span class="option"> > To check syntax only </span>
+			<span class="option"> > To check syntax and find problems </span>
+			<span class="option blue">
+				> To check syntax, find problems, and enforce code style
+			</span>
+		</div>
+		<h3 class="h3">What type of modules does your project use?</h3>
+		<div class="contend">
+			<span class="option blue"> > JavaScript modules (import/export) </span>
+			<span class="option"> > CommonJS (require/exports) </span>
+			<span class="option"> > None of these </span>
+		</div>
+		<h3 class="h3">Which framework does your project use?</h3>
+		<div class="contend">
+			<span class="option blue"> > React</span>
+			<span class="option"> > Vue.js</span>
+			<span class="option"> > None of these</span>
+		</div>
+		<h3 class="h3">Does your project use TypeScript?</h3>
+		<div class="contend">
+			<span class="option blue"> > No </span>
+			<span class="option"> > Yes </span>
+		</div>
+		<h3 class="h3">Where does your code run?</h3>
+		<div class="contend">
+			<span class="option">
+				(Press (space) to select, (a) to toggle all, (i) to invert selection)
+			</span>
+			<span class="option blue"> √ Browser </span>
+			<span class="option"> √ Node </span>
+		</div>
+		<h3 class="h3">How would you like to define a style for your project?</h3>
+		<div class="contend">
+			<span class="option blue"> > Use a popular style guide </span>
+			<span class="option"> > Answer questions about your style </span>
+		</div>
+		<h3 class="h3">Which style guide do you want to follow?</h3>
+		<div class="contend">
+			<span class="option">
+				> Airbnb: https://github.com/airbnb/javascript
+			</span>
+			<span class="option blue">
+				> Standard: https://github.com/standard/standard</span
+			>
+			<span class="option">
+				> Google: https://github.com/google/eslint-config-google
+			</span>
+			<span class="option">
+				> XO: https://github.com/xojs/eslint-config-xo
+			</span>
+		</div>
+		<h3 class="h3">What format do you want your config file to be in?</h3>
+		<span> seleccionamos cualquiera de las 3 </span>
+		<div class="contend">
+			<span class="option"> > JavaScript </span>
+			<span class="option"> > YAML</span>
+			<span class="option"> > JSON</span>
+		</div>
+		<h3 class="h3">Would you like to install them now?</h3>
+		<div class="contend">
+			<span class="option"> > No</span>
+			<span class="option blue"> > Yes</span>
+		</div>
+		<h3 class="h3">Which package manager do you want to use?</h3>
+		<div class="contend">
+			<span class="option"> > npm </span>
+			<span class="option"> > yarn </span>
+			<span class="option"> > pnpm</span>
+		</div>
+		<h3 class="h3">
+			<span class="red"> Error </span>
+		</h3>
+		<p>si en react con vite sale este error:</p>
+		<div class="contend" style="--border:#e60000;">
+			'React' must be in scope when using JSXeslintreact/react-in-jsx-scope
+		</div>
+		<p>
+			este error se debe ya que por defecto eslint esta comfigurado para que por
+			defecto se tengamos que hacer un
+			<code class="purpel"
+				>import <span class="cian">React</span> from
+				<span class="green">'react'</span></code
+			>
+			en cada archivo.
+		</p>
+		<p>
+			Con Vite esto no es necesario ya que vite utiliza el runtime automatic ya
+			que usa la nueva trasformacion desde react 17.
+		</p>
+		<p>
+			Para solucionar este error se puede o desabilitar la regla (no es la
+			manera recomendada) en el archivo ".eslintrc"
+		</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="gray">rules:</span> <span class="yellow">{</span>
+				<br />
+				<span class="green"> &nbsp 'react/react-in-jsx-scope': 'off'</span>
+				<br />
+				<span class="yellow">}</span>
+			</code>
+		</div>
+		<p>
+			tambien se puede poner un pequeño plugin (manera recomendada) en el
+			archivo ".eslintrc"
+		</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="gray">extends</span> : <span class="yellow">[</span><br />
+				<span class="green">&nbsp 'plugin:react/recommended'</span>,<br />
+				<span class="green">&nbsp 'plugin:react/jsx-runtime'</span>,<br />
+				<span class="green">&nbsp 'standard'</span><br />
+				<span class="yellow">]</span>
+			</code>
+		</div>
+		<hr />
+		<h2>prettier</h2>
+		<p>Primero comenzamos instalando el paquete de prettier.</p>
+		<div class="contend">npm i -E -D prettier</div>
+		<p>configuraremos el prettier con su archivo respectivo .prettierrc</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="yellow">{</span> <br />
+				<span class="green"> &nbsp "arrowParens": "avoid"</span>,<br />
+				<span class="green"> &nbsp "useTabs": true </span>,<br />
+				<span class="green"> &nbsp "singleQuote": true </span>,<br />
+				<span class="green"> &nbsp "jsxSingleQuote": true </span><br />
+				<span class="yellow">}</span>
+			</code>
+		</div>
+		<hr />
+		<h2>compatibilidad eslint y prettier</h2>
+		<p>
+			para que ambos paquete sean compatibles tenemos que instalar un paquete
+			oficial
+		</p>
+		<div class="contend">npm i -D eslint-config-prettier</div>
+		<p>haora solo tenemos que llamarlo en el archivo .eslintrc</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="gray">extends</span>: <span class="yellow">[</span><br />
+				<span class="green"> &nbsp 'plugin:react/recommended'</span>,<br />
+				<span class="green"> &nbsp 'plugin:react/jsx-runtime'</span>,<br />
+				<span class="green"> &nbsp 'standard'</span>,<br />
+				<span class="green"> &nbsp 'eslint-config-prettier'</span><br />
+				<span class="yellow">]</span>
+			</code>
+		</div>
+		<p>
+			con esto ya esta todo comfigurado y eslin tomara las reglas de prettier
+			por delante de la de el
+		</p>
+		<hr />
+		<h2>ultima configuración</h2>
+		<p>
+			tenemos que configurar ambos paquetes para que ignore unas carpetas y
+			archivo
+		</p>
+		<p>
+			para ignorar mediante prettier usamo el archivo .prettierignore y
+			colocamos lo siguientes
+		</p>
+		<div class="contend">
+			dist <br />
+			package-lock.json
+		</div>
+		<p>
+			en el caso de eslint usamos el archivo .eslintignore y solo ignoramos lo
+			siguiente
+		</p>
+		<div class="contend">dist</div>
+		<h3 class="h3">configuramos los script</h3>
+		<p>para prettier ponemos</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="green"> "format":"prettier --write ." </span>
+			</code>
+		</div>
+		<p>para eslint ponemos</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="green"> "lint": "eslint --fix .js,.jsx" </span>
+			</code>
+		</div>
+		<p>
+			en el script de eslint tenemos q colocar las extenciones de los achivos q
+			qremos q afecten
+		</p>
+		<h3 class="red">Error comune</h3>
+		<div class="contend" style="--border:#e60000;">
+			Warning: React version not specified in eslint-plugin-react settings. See
+			https://github.com/jsx-eslint/eslint-plugin-react#configuration
+		</div>
+		<p>solución: es poner en el archivo .eslintrc</p>
+		<div class="contend">
+			<code class="purpel">
+				<span class="gray">settings</span>: <span class="yellow">{</span> <br />
+				<span class="gray">&nbsp react</span>: <span class="yellow">{</span
+				><br />
+				<span class="gray">&nbsp &nbsp vercion</span>:
+				<span class="green">'detect'</span>,<br />
+				<span class="yellow"> &nbsp }</span>, <br />
+				<span class="yellow">}</span>
+			</code>
+		</div>
+		<hr />
+		<h1 class="title">archivos configurado completo</h1>
+		<h2>.eslintrc</h2>
+		<div class="contend">
+			<code class="purpel">
+				<span class="code__violeta">module</span>.<span class="code__violeta"
+					>exports</span
+				>
+				= <span class="yellow"> {</span> <br />
+				<span class="gray">&nbsp env</span>: <span class="yellow">{</span>
+				<br />
+				<span class="gray">&nbsp &nbsp &nbsp browser</span>: true,<br />
+				<span class="gray">&nbsp &nbsp &nbsp es2021</span>: true,<br />
+				&nbsp &nbsp <span class="yellow">}</span>,<br />
+				<span class="gray">&nbsp settings</span>: <span class="yellow">{</span
+				><br />
+				<span class="gray">&nbsp &nbsp react</span>:
+				<span class="yellow">{</span><br />
+				<span class="gray">&nbsp &nbsp &nbsp version</span>:
+				<span class="green">'detect'</span>,<br />
+				&nbsp &nbsp <span class="yellow">}</span>,<br />
+				&nbsp <span class="yellow">}</span>,<br />
+				<span class="gray">&nbsp extends</span> : <span class="yellow">[</span>
+				<br />
+				<span class="green">&nbsp &nbsp 'plugin:react/recommended'</span>,<br />
+				<span class="green">&nbsp &nbsp 'plugin:react/jsx-runtime'</span>,<br />
+				<span class="green">&nbsp &nbsp 'standard'</span>,<br />
+				<span class="green">&nbsp &nbsp 'eslint-config-prettier'</span>,<br />
+				<span class="yellow">&nbsp ]</span>,<br />
+				<span class="gray">&nbsp overrides</span> :
+				<span class="yellow">[]</span>,<br />
+				<span class="gray">&nbsp parserOptions</span> :
+				<span class="yellow">{</span> <br />
+				<span class="gray">&nbsp &nbsp ecmaVersion</span> :
+				<span class="green">'latest'</span>,<br />
+				<span class="gray">&nbsp &nbsp sourceType</span> :
+				<span class="green">'module'</span>,<br />
+				&nbsp <span class="yellow">}</span>,<br />
+				<span class="gray">&nbsp plugins</span> : <span class="yellow">[</span
+				><span class="green">'react'</span><span class="yellow">]</span>,<br />
+				<span class="gray">&nbsp rules</span> : <span class="yellow">{</span
+				><br />
+				<span class="gray">
+					&nbsp &nbsp // esta regla es obsional para no tener que asignarles
+					<br />
+					&nbsp &nbsp // los tipos a cada props de los componentes <br />
+					&nbsp &nbsp // 'react/prop-types': 'off' </span
+				>,<br />
+				&nbsp <span class="yellow">}</span>,<br />
+				<span class="yellow">}</span>;
+			</code>
+		</div>
+		<h2>.prettierrc</h2>
+		<div class="contend">
+			<code class="purpel">
+				<span class="yellow">{</span><br />
+				<span class="green">&nbsp "arrowParens"</span> :
+				<span class="green">"avoid"</span>,<br />
+				<span class="green">&nbsp "useTabs"</span> : true,<br />
+				<span class="green">&nbsp "singleQuote"</span> : true,<br />
+				<span class="green">&nbsp "jsxSingleQuote"</span> : true<br />
+				<span class="yellow">}</span>
+			</code>
+		</div>
+		<h2>.eslintignore</h2>
+		<div class="contend">dist</div>
+		<h2>.prettierignore</h2>
+		<div class="contend">
+			dist <br />
+			package-lock.json
+		</div>
+		<h2>script</h2>
+		<div class="contend">
+			<code class="purpel">
+				<span class="green"> "format"</span> :
+				<span class="green">"prettier --write ."</span>,<br />
+				<span class="green">"lint"</span> :
+				<span class="green">"eslint --fix . --ext .js,.jsx"</span>
+			</code>
+		</div>
+	</body>
+</html>
