@@ -1,0 +1,14 @@
+.btn01 {
+	font-size: 1rem;
+	background-color: var(--bg);
+	border-radius: 0.3125em;
+	padding: 0.625em 1.25em;
+	border: 0.125em solid var(--borderColor);
+	transform: scale(1);
+	transition: transform 0.3s;
+}
+@media (hover: hover) {
+	.btn01:hover {
+		transform: scale(0.98);
+	}
+}
