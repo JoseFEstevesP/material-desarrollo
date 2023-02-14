@@ -1,0 +1,13 @@
+body {
+	display: grid;
+	place-items: center;
+}
+.text {
+	font-size: 5rem;
+	font-family: system-ui, sans-serif;
+	background: #647eff;
+	background: linear-gradient(#42d392, #647eff);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
