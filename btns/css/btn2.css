@@ -1,0 +1,27 @@
+.btn02 {
+	font-size: 1rem;
+	padding: 0.3125em;
+	display: flex;
+	cursor: pointer;
+	border: 0;
+	border-radius: 0.3125em;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 9, 121, 1) 50%,
+		rgba(0, 212, 255, 1) 100%
+	);
+}
+.btn02__text {
+	padding: 0.9375em 1.875em;
+	transition:background-color 0.3s;
+	border-radius: 0.3125em;
+	background-color: #000;
+}
+.btn02:hover .btn02__text {
+	background: none;
+}
+.btn02:active {
+	transform: scale(0.9);
+}
