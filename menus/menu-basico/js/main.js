@@ -8,13 +8,15 @@ document.addEventListener('click', e => {
 		items.forEach(i => {
 			i.classList.toggle('menu__item--show');
 		});
-		e.target.firstElementChild.classList.add('btnMenu__iconBar--bg')
-		e.target.disabled = true;
-		items[items.length - 1].addEventListener('transitionend',e => {
-			e.target.offsetParent.parentElement.parentElement.firstElementChild.disabled = false;
-			e.target.offsetParent.parentElement.parentElement.firstElementChild.firstElementChild.classList.remove('btnMenu__iconBar--bg')
+		if (!window.matchMedia('(prefers-reduced-motion)').matches) {
+			e.target.disabled = true;
+			e.target.firstElementChild.classList.add('btnMenu__iconBar--bg')
+			items[items.length - 1].addEventListener('transitionend',e => {
+				e.target.offsetParent.parentElement.parentElement.firstElementChild.disabled = false;
+				e.target.offsetParent.parentElement.parentElement.firstElementChild.firstElementChild.classList.remove('btnMenu__iconBar--bg')
 			},
 			{ once: true }
-		);
+			);
+		}
 	}
 });
