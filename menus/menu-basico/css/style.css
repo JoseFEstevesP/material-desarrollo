@@ -3,7 +3,8 @@
 	--colorSecondary: #f0f0f0;
 	--sizeBtn: 3.125em;
 	--colorBg: #ccc;
-	--borderRadiusContentMenu:0.3125em;
+	--borderRadiusContentMenu: 0.3125em;
+	--stop: #ff1919;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -61,6 +62,11 @@
 .btnMenu__iconBar::after {
 	top: 0.5em;
 }
+.btnMenu__iconBar--bg,
+.btnMenu__iconBar--bg::before,
+.btnMenu__iconBar--bg::after {
+	background-color: var(--stop);
+}
 .btnMenu__iconBar--show {
 	background-color: transparent;
 }
@@ -72,6 +78,7 @@
 	top: 0;
 	transform: rotate(-50deg);
 }
+
 .menu {
 	width: 20em;
 	padding-left: 0;
@@ -96,17 +103,19 @@
 .menu__item {
 	--delay: 1;
 	text-align: center;
+	visibility: hidden;
 	opacity: 0;
-	transform: translateX(-100%);
-	transition: opacity 0.5s, transform 0.5s;
-	transition-delay: calc(var(--delay) * 200ms);
+	transform: scale(0.8);
+	transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+	transition-delay: calc(100ms * var(--delay));
 	overflow: hidden;
 	background-color: var(--colorBg);
 }
 @media screen and (min-width: 768px) {
 	.menu__item {
+		visibility: visible;
 		opacity: 1;
-		transform: translateX(0);
+		transform: scale(1);
 		background-color: transparent;
 	}
 }
@@ -119,8 +128,9 @@
 	border-bottom-right-radius: var(--borderRadiusContentMenu);
 }
 .menu__item--show {
+	visibility: visible;
 	opacity: 1;
-	transform: translateX(0);
+	transform: scale(1);
 }
 .menu__link {
 	text-decoration: none;
@@ -128,7 +138,7 @@
 	padding: 1em;
 	transition: transform 0.3s, color 0.5s, background-color 0.5s;
 }
-@media (hover:hover) {
+@media (hover: hover) {
 	.menu__link:hover {
 		color: #ccc;
 		transform: scale(1.09) rotate(2deg);
