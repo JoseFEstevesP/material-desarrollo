@@ -1,3 +1,4 @@
+// hay apis q no aceptan el 'Content-Type': 'application/json' esta cabezera se tiene q modificar depende de la api  
 export const fetchData = () => {
 	const helpFetch = async (url, options = {}) => {
 		const defaultOptions = {
@@ -7,6 +8,8 @@ export const fetchData = () => {
 			},
 			mode: 'cors',
 		};
+		options.body = JSON.stringify(options.body) || false;
+    if (!options.body) delete options.body;
 		const requestOptions = Object.assign({}, defaultOptions, options);
 		try {
 			const response = await fetch(url, requestOptions);
@@ -23,17 +26,14 @@ export const fetchData = () => {
 	};
 	const post = (url, options = {}) => {
 		options.method = 'POST';
-		options.body = JSON.stringify(options.data);
 		return helpFetch(url, options);
 	};
 	const put = (url, options = {}) => {
 		options.method = 'PUT';
-		options.body = JSON.stringify(options.data);
 		return helpFetch(url, options);
 	};
 	const del = (url, options = {}) => {
 		options.method = 'DELETE';
-		options.body = JSON.stringify(options.data);
 		return helpFetch(url, options);
 	};
 	return { get, post, put, del };
