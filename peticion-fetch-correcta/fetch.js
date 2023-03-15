@@ -8,17 +8,26 @@ export const fetchData = () => {
 			},
 			mode: 'cors',
 		};
+		const controller = new AbortController();
+		const signal = controller.signal();
+		const abortTime = setTimeout(() => controller.abort(), 3000);
+		options.signal = signal;
 		options.body = JSON.stringify(options.body) || false;
-    if (!options.body) delete options.body;
+		if (!options.body) delete options.body;
 		const requestOptions = Object.assign({}, defaultOptions, options);
 		try {
 			const response = await fetch(url, requestOptions);
+			clearTimeout(abortTime);
 			if (!response.ok) {
 				throw new Error('La respuesta de la red no es correcta');
 			}
 			return await response.json();
 		} catch (error) {
-			throw new Error(`Error de búsqueda: ${error.message}`);
+			if (error.name === 'AbortError') {
+				throw new Error(`La solicitud fue cancelada después de ${3} segundos`);
+			} else {
+				throw new Error(`Error de búsqueda: ${error.message}`);
+			}
 		}
 	};
 	const get = (url, options = {}) => {
