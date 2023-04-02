@@ -9,7 +9,7 @@ export const fetchData = () => {
 			mode: 'cors',
 		};
 		const controller = new AbortController();
-		const signal = controller.signal();
+		const signal = controller.signal;
 		const abortTime = setTimeout(() => controller.abort(), 3000);
 		options.signal = signal;
 		options.body = JSON.stringify(options.body) || false;
@@ -24,9 +24,9 @@ export const fetchData = () => {
 			return await response.json();
 		} catch (error) {
 			if (error.name === 'AbortError') {
-				throw new Error(`La solicitud fue cancelada después de ${3} segundos`);
+				throw new Error(`La solicitud fue cancelada despus de ${3} segundos`);
 			} else {
-				throw new Error(`Error de búsqueda: ${error.message}`);
+				throw new Error(`Error de busqueda: ${error.message}`);
 			}
 		}
 	};
