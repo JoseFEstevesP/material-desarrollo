@@ -1,0 +1,115 @@
+:root {
+	--boxFormBR: #433e47;
+	--boxFormBG: #36333a;
+	--border: #727075;
+	--borderHover: #565458;
+	--errorsColor: #dc3545;
+	--correctColor: #1a7f45;
+	--btnColor: #29322e;
+}
+.title {
+	text-align: center;
+	margin-top: 0;
+}
+.contentForm {
+	width: 20em;
+	height: 100%;
+	font-size: 1rem;
+	margin: 0 auto;
+	padding: 1em;
+	border-radius: 0.3125em;
+	background-color: var(--boxFormBG);
+	border: 0.3125em solid var(--boxFormBR);
+}
+.contentForm__title {
+	margin-top: 0;
+	text-align: center;
+}
+.form {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 0.625em;
+}
+.form__contentInput {
+	width: 100%;
+	border-radius: 6.25em;
+}
+.form__input {
+	width: 100%;
+	height: 2.5em;
+	padding: 0.625em 1em;
+	border-radius: 6.25em;
+	border: 0.125em solid var(--border);
+	transition: border 0.3s;
+}
+@media (hover: hover) {
+	.form__input:hover {
+		border: 0.125em solid var(--borderHover);
+	}
+}
+.form__input--error {
+	border: 0.1875em solid var(--errorsColor);
+}
+.form__input--correct {
+	border: 0.1875em solid var(--correctColor);
+}
+.form__textarea {
+	width: 100%;
+	height: auto;
+	border-radius: 0.625em;
+}
+.form__textarea::-webkit-scrollbar {
+	width: 0.6em;
+	background-color: var(--boxFormBR);
+}
+.form__textarea::-webkit-scrollbar-thumb {
+	border-radius: 0.3125em;
+	background-color: var(--border);
+}
+.form__inputMsg {
+	width: 100%;
+	margin-top: 0.3125em;
+	margin-bottom: 0;
+	padding: 0 1em;
+	color: var(--errorsColor);
+	font-weight: bold;
+	display: none;
+}
+.form__inputMsg--show {
+	display: block;
+}
+.form__inputMsg--showSend {
+	display: block;
+	color: var(--correctColor);
+}
+.form__btn {
+	width: 100%;
+	padding: 0.3125em 1em;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.3125em;
+	border-radius: 6.25em;
+	border: 0.125em solid var(--border);
+	box-shadow: 0 0 5px var(--btnColor);
+	background-color: var(--btnColor);
+	transform: scale(1);
+	transition: border 0.3s, transform 0.3s;
+}
+.form__svg {
+	width: 0.9375em;
+	padding: 0.3125em 0;
+}
+@media (hover: hover) {
+	.form__btn:hover {
+		border: 0.125em solid var(--borderHover);
+	}
+}
+.form__btn:active {
+	transform: scale(0.98);
+}

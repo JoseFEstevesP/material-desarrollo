@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formulario</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="./js/main.js" type="module"></script>
+	</head>
+	<body>
+		<h1 class="title">Formulario de prueba</h1>
+		<div class="contentForm">
+			<h2 class="contentForm__title">Enviar correo</h2>
+			<form action="#" class="form" id="form">
+				<p class="form__inputMsg"></p>
+				<div class="form__contentInput">
+					<input
+						type="text"
+						name="name"
+						placeholder="Nombre..."
+						class="form__input"
+						required
+					/>
+					<p class="form__inputMsg"></p>
+				</div>
+				<div class="form__contentInput">
+					<input
+						type="text"
+						name="email"
+						placeholder="Email..."
+						class="form__input"
+						required
+					/>
+					<p class="form__inputMsg"></p>
+				</div>
+				<div class="form__contentInput">
+					<input
+						type="text"
+						name="subject"
+						placeholder="Asunto..."
+						class="form__input"
+						required
+					/>
+					<p class="form__inputMsg"></p>
+				</div>
+				<div class="form__contentInput">
+					<textarea
+						type="text"
+						cols="30"
+						rows="10"
+						name="comments"
+						placeholder="Comentario..."
+						class="form__input form__textarea"
+						required
+					>
+				</textarea>
+					<p class="form__inputMsg"></p>
+				</div>
+				<button type="submit" title="enviar" class="form__btn">Enviar
+					<div class="form__svg">
+						<svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>	
+					</div>
+				</button>
+			</form>
+		</div>
+	</body>
+</html>
