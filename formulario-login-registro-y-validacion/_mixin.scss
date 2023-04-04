@@ -1,9 +1,0 @@
-@mixin tamaño($w: 100%, $h: 100%) {
-  width: $w;
-  height: $h;
-}
-@mixin display($d: flex, $j: center, $a: center) {
-  display: $d;
-  justify-content: $j;
-  align-items: $a;
-}
