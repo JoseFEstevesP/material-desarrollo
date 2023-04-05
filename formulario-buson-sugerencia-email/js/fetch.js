@@ -9,7 +9,7 @@ export const fetchData = () => {
 		};
 		const controller = new AbortController();
 		const signal = controller.signal;
-		const abortTime = setTimeout(() => controller.abort(), 4000);
+		const abortTime = setTimeout(() => controller.abort(), 10000);
 		options.signal = signal;
 		options.body = JSON.stringify(options.body) || false;
 		if (!options.body) delete options.body;

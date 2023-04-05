@@ -46,7 +46,7 @@ form.addEventListener('submit', e => {
 	const { name, email, subject, comments } = compos;
 	if (name && email && subject && comments) {
 		const { name, email, subject, comments } = e.target;
-		const url = 'https://formsubmit.co/ajax/josefelixestevenpacheco@gmail.com';
+		const url = 'https://formsubmit.co/ajax/joseesteves199930@gmail.com';
 		const body = {
 			name: name.value,
 			email: email.value,
