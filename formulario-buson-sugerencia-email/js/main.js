@@ -1,4 +1,5 @@
 import { fetchData } from './fetch.js';
+const loader = document.querySelector('.loader');
 
 const validate = ({ input, reEx, e, msg, name }) => {
 	if (input.match(reEx) !== null) {
@@ -57,11 +58,31 @@ form.addEventListener('submit', e => {
 		fetchData()
 			.post(url, { body })
 			.then(res => {
-				console.log(res.success);
-				if(res.success === 'true'){
+				if (res.success === 'true') {
 					e.target.firstElementChild.textContent = 'Mensaje enviado';
 					e.target.firstElementChild.classList.add('form__inputMsg--showSend');
 					e.target.firstElementChild.classList.remove('form__inputMsg--show');
+					let counter = -100;
+					let cI = setInterval(() => {
+						if (counter === 0) {
+							clearInterval(cI);
+							e.target.firstElementChild.classList.remove(
+								'form__inputMsg--showSend'
+							);
+							name.value = '';
+							name.classList.remove('form__input--correct');
+							email.value = '';
+							email.classList.remove('form__input--correct');
+							subject.value = '';
+							subject.classList.remove('form__input--correct');
+							comments.value = '';
+							comments.classList.remove('form__input--correct');
+							loader.setAttribute('style', `--to:-100%`);
+						} else {
+							counter++;
+							loader.setAttribute('style', `--to:${counter}%`);
+						}
+					}, 20);
 				}
 			})
 			.catch(err => {
