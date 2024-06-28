@@ -1,0 +1,71 @@
+:root {
+	--bg: #3d3f43;
+	--nav-bg: #131315;
+	--primary: #ffbf37;
+	--nav-item-color: #fff;
+	--nav-border: #8f9a9e;
+	--white: #fff;
+	--gap: 0.5rem;
+	--item-width: 4rem;
+}
+
+body {
+	font-size: 16px;
+	display: grid;
+	place-items: center;
+	padding: 0.1em;
+}
+
+.navigation {
+	display: flex;
+	justify-content: center;
+	padding: 0.5em 1em 0em 1em;
+	background-color: var(--nav-bg);
+	box-shadow: 0 0.5em 1em 0 #333;
+	border-radius: 1em;
+	border: 0.0625em solid rgba(148, 156, 169, 0.15);
+	user-select: none;
+}
+
+.navigation__list {
+	display: flex;
+	list-style: none;
+	gap: var(--gap);
+	padding: 0;
+	position: relative;
+}
+
+.navigation__li {
+	width: var(--item-width);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.navigation__a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 4em;
+	gap: 0.5em;
+	width: 100%;
+	color: var(--nav-item-color);
+	transition: all 0.2s ease-in-out;
+}
+
+.navigation__icon {
+	width: 2em;
+	height: 2em;
+	transition: all 0.2s ease-in-out;
+}
+
+.navigation__bar {
+	position: absolute;
+	top: -1em;
+	min-width: var(--item-width);
+	height: 0.5em;
+	background-color: var(--primary);
+	z-index: 1;
+	border-radius: 0.25em;
+	transition: 0.5s;
+}
