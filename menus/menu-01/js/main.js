@@ -4,7 +4,6 @@ const menuLi = document.querySelectorAll('.menu__li');
 menuBtn.addEventListener('click', e => {
 	e.target.firstElementChild.classList.toggle('menu__bar--show');
 	menu.classList.toggle('menu__menu--show');
-	console.log(window.matchMedia('prefers-reduced-motion'));
 	if (!window.matchMedia('(prefers-reduced-motion)').matches) {
 		e.target.disabled = true;
 		e.target.firstElementChild.classList.add('menu__bar--disabled');
