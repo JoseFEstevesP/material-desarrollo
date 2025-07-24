@@ -1,0 +1,20 @@
+.card {
+	--color1: blue;
+	--color2: red;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	color: var(--color-secondary);
+
+	--status: b;
+
+	background-color: if(
+		style(--status: a): var(--color1) ; style(--status: b): var(--color2) ; else:
+			var(--color-secondary)
+	);
+}
